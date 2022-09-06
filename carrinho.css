@@ -1,0 +1,11 @@
+.produto{
+
+width: 100px;
+}
+.campo-qtd{
+    width: 25px;
+    text-align: right;
+}
+table tr{
+   
+    text-align: center;
