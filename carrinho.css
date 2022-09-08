@@ -1,11 +1,14 @@
-.produto{
+.foto-produto{
 
 width: 100px;
 }
-.campo-qtd{
+.quantity{
     width: 25px;
    
 }
 table tr{
     text-align: center;
+}
+#total{
+    font-weight: 900;
 }
