@@ -12,16 +12,10 @@ var totalItens = 0
 for (var index = 0; index < produtos.length; index++) {
     const elementsPrice = produtos[index].getElementsByClassName('preco');
     const priceText = elementsPrice[0].innerHTML
-
     const price = converteTextNumber(priceText)
 
-   
-
-    
-
-
     const elementsQtd = produtos[index].getElementsByClassName('quantity')
-    const qtd = parseFloat(elementsQtd[0].value)
+    const qtd = converteTextNumber(elementsQtd[0].value)
 
    
 
@@ -31,12 +25,13 @@ for (var index = 0; index < produtos.length; index++) {
     var subTotal = qtd * price
     totalProdutos += subTotal
 
-    console.log(`Total: ${Math.round(totalProdutos, 4)}`)
+    //console.log(`Total: ${Math.round(totalProdutos, 4)}`)
     //console.log(totalItens)
 
     
 }
-    document.getElementById('total').innerHTML = converteNumberText(totalProdutos)
+    //document.getElementById('total').innerHTML = converteNumberText(totalProdutos)
+    escreveTotal(totalProdutos)
 }
 window.onchange = calculaTotal
 
@@ -52,4 +47,6 @@ function converteNumberText(value){
 
 }
 
-
+function escreveTotal(value) {
+    total.innerHTML = converteNumberText(value)
+}
