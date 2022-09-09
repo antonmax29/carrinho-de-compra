@@ -61,7 +61,7 @@ function escreveTotal(value) {
 botao_enviar.addEventListener('click', Enviar)
 
 var msn = ''
-function Enviar(value) {
+function Enviar() {
 
     for (let index = 0; index < produtos.length; index++) {
         const nomeProduto = produtos[index].getElementsByClassName('foto-produto')
@@ -77,10 +77,13 @@ function Enviar(value) {
 
     console.log(textoProduto, priceText)
     }
-    console.log(msn)
+   
+
     //alert('compra finalizada')
-msn = window.encodeURIComponent(msn)
+
     let url = "https://api.whatsapp.com/send?phone=5585994348407&text=Bem vindo a Limpinho-->> Seu pedido \n" + "Descricao | Preço | Quantidade \n" + msn + "Total do pedido: " + total.innerHTML;
 
+    
     window.open(url)
+   
 }
