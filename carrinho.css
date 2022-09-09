@@ -1,8 +1,8 @@
-.produto{
+.foto-produto{
 
 width: 100px;
 }
-.campo-qtd{
+.quantity{
     width: 25px;
     text-align: right;
 }
