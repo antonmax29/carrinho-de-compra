@@ -8,7 +8,7 @@ window.onchange = calculaTotal
 
 function calculaTotal() {
     var totalProdutos = 0
-var totalItens = 0
+
 
 for (var index = 0; index < produtos.length; index++) {
     const elementsPrice = produtos[index].getElementsByClassName('preco');
@@ -25,18 +25,12 @@ for (var index = 0; index < produtos.length; index++) {
 
  
 
-    //var Itens = qtd
-    //totalItens +=Itens
 
     var subTotal = qtd * price
     totalProdutos += subTotal
 
-    //console.log(`Total: ${Math.round(totalProdutos, 4)}`)
-    //console.log(totalItens)
-  
     
 }
-    //document.getElementById('total').innerHTML = converteNumberText(totalProdutos)
     escreveTotal(totalProdutos)
   
 }
