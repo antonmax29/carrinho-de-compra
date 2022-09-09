@@ -60,30 +60,44 @@ function escreveTotal(value) {
 
 botao_enviar.addEventListener('click', Enviar)
 
-var msn = ''
-function Enviar() {
 
+function Enviar() {
+    var msn = ''
     for (let index = 0; index < produtos.length; index++) {
         const nomeProduto = produtos[index].getElementsByClassName('foto-produto')
         var textoProduto = nomeProduto[0].getAttribute('alt')
     
         const elementsPrice = produtos[index].getElementsByClassName('preco');
     const priceText = elementsPrice[0].innerHTML
-       
+      var preco = converteNumberText(converteTextNumber(priceText))
     const elementsQtd = produtos[index].getElementsByClassName('quantity')
         var qtd = elementsQtd[0].value
 
-  msn += `produto${index}: ${textoProduto} | ${priceText} | ${qtd} \n`
+        if(qtd == '0'){
+           textoProduto = ''
+          preco = ''
+           qtd = ''
+            }
+   
+
+            msn += `${textoProduto}  ${preco}  ${qtd}  \n`
+
+           
+ 
 
     console.log(textoProduto, priceText)
     }
    
-
-    //alert('compra finalizada')
-
+if(converteTextNumber(total.innerHTML) <= 0){
+    alert('carrinho vazio')
+}else{
     let url = "https://api.whatsapp.com/send?phone=5585994348407&text=Bem vindo a Limpinho-->> Seu pedido \n" + "Descricao | Preço | Quantidade \n" + msn + "Total do pedido: " + total.innerHTML;
 
     
     window.open(url)
+}
+    //alert('compra finalizada')
+
+   
    
 }
