@@ -73,14 +73,14 @@ function Enviar(value) {
     const elementsQtd = produtos[index].getElementsByClassName('quantity')
         var qtd = elementsQtd[0].value
 
-  msn += `produto${index}: ${textoProduto} ${priceText} ${qtd}`
+  msn += `produto${index}: ${textoProduto} | ${priceText} | ${qtd} \n`
 
     console.log(textoProduto, priceText)
     }
     console.log(msn)
     //alert('compra finalizada')
-
-    let url = "https://api.whatsapp.com/send?phone=5585994348407&text=Bem vindo a Limpinho-->> %0A Seu pedido%0A" + msn + "Total do pedido: " + total.innerHTML;
+msn = window.encodeURIComponent(msn)
+    let url = "https://api.whatsapp.com/send?phone=5585994348407&text=Bem vindo a Limpinho-->> Seu pedido \n" + "Descricao | Preço | Quantidade \n" + msn + "Total do pedido: " + total.innerHTML;
 
     window.open(url)
 }
