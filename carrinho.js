@@ -15,9 +15,14 @@ for (var index = 0; index < produtos.length; index++) {
     const price = converteTextNumber(priceText)
 
     const elementsQtd = produtos[index].getElementsByClassName('quantity')
+
+    if(elementsQtd[0].value <= '0'){
+        elementsQtd[0].value = '0'
+       }
+     
     const qtd = converteTextNumber(elementsQtd[0].value)
 
-   
+ 
 
     //var Itens = qtd
     //totalItens +=Itens
@@ -27,7 +32,7 @@ for (var index = 0; index < produtos.length; index++) {
 
     //console.log(`Total: ${Math.round(totalProdutos, 4)}`)
     //console.log(totalItens)
-
+  
     
 }
     //document.getElementById('total').innerHTML = converteNumberText(totalProdutos)
