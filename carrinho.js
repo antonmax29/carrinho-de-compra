@@ -60,7 +60,7 @@ function escreveTotal(value) {
 
 botao_enviar.addEventListener('click', Enviar)
 
-
+var msn = ''
 function Enviar(value) {
 
     for (let index = 0; index < produtos.length; index++) {
@@ -70,9 +70,17 @@ function Enviar(value) {
         const elementsPrice = produtos[index].getElementsByClassName('preco');
     const priceText = elementsPrice[0].innerHTML
        
-    
+    const elementsQtd = produtos[index].getElementsByClassName('quantity')
+        var qtd = elementsQtd[0].value
+
+  msn += `produto${index}: ${textoProduto} ${priceText} ${qtd}`
+
     console.log(textoProduto, priceText)
     }
-    
+    console.log(msn)
     //alert('compra finalizada')
+
+    let url = "https://api.whatsapp.com/send?phone=5585994348407&text=Bem vindo a Limpinho-->> %0A Seu pedido%0A" + msn + "Total do pedido: " + total.innerHTML;
+
+    window.open(url)
 }
