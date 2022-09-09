@@ -2,6 +2,7 @@ const produtos = document.getElementsByClassName('produto')
 
 const total = document.getElementById('total')
 
+const botao_enviar= document.getElementById('btn-enviar')
 
 window.onchange = calculaTotal
 
@@ -37,6 +38,7 @@ for (var index = 0; index < produtos.length; index++) {
 }
     //document.getElementById('total').innerHTML = converteNumberText(totalProdutos)
     escreveTotal(totalProdutos)
+  
 }
 
 
@@ -54,4 +56,23 @@ function converteNumberText(value){
 
 function escreveTotal(value) {
     total.innerHTML = converteNumberText(value)
+}
+
+botao_enviar.addEventListener('click', Enviar)
+
+
+function Enviar(value) {
+
+    for (let index = 0; index < produtos.length; index++) {
+        const nomeProduto = produtos[index].getElementsByClassName('foto-produto')
+        var textoProduto = nomeProduto[0].getAttribute('alt')
+    
+        const elementsPrice = produtos[index].getElementsByClassName('preco');
+    const priceText = elementsPrice[0].innerHTML
+       
+    
+    console.log(textoProduto, priceText)
+    }
+    
+    //alert('compra finalizada')
 }

@@ -33,3 +33,23 @@ table tr{
 #total{
     font-weight: 700;
 }
+#btn-enviar{
+    outline: none;
+    background-color: green;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    width: 200px;
+
+    
+    
+}
+body{
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
