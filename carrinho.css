@@ -1,11 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+*{
+    font-family: 'Roboto', sans-serif;
+}
+
+h1{
+    padding-left: 10px;
+   width: 340px;
+    margin-bottom: 20px;
+    color: black;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+table{
+    background-color: white;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
 .foto-produto{
 
 width: 100px;
 }
 .quantity{
     width: 25px;
-    text-align: right;
+   
 }
 table tr{
     text-align: center;
+}
+#total{
+    font-weight: 700;
 }

@@ -1,24 +1,52 @@
-var produtos = document.getElementsByClassName('produto');
+const produtos = document.getElementsByClassName('produto')
 
-var total = document.getElementById('total')
-for(var pos = 0; pos < produtos.length; pos++){
+const total = document.getElementById('total')
 
-    var price = produtos[pos].getElementsByClassName('preco');
-    var priceText = price[0].innerHTML
-  
-}
-console.log(produtos[0].getElementsByClassName('preco'));
-console.log(priceText)
-console.log(produtos.length)
 
-function converteTextNum(text) {
-    var texto = text.replace('R$ ', '').replace(',','.')
-    return parseFloat(texto)
+window.onchange = calculaTotal
+
+function calculaTotal() {
+    var totalProdutos = 0
+var totalItens = 0
+
+for (var index = 0; index < produtos.length; index++) {
+    const elementsPrice = produtos[index].getElementsByClassName('preco');
+    const priceText = elementsPrice[0].innerHTML
+    const price = converteTextNumber(priceText)
+
+    const elementsQtd = produtos[index].getElementsByClassName('quantity')
+    const qtd = converteTextNumber(elementsQtd[0].value)
+
+   
+
+    //var Itens = qtd
+    //totalItens +=Itens
+
+    var subTotal = qtd * price
+    totalProdutos += subTotal
+
+    //console.log(`Total: ${Math.round(totalProdutos, 4)}`)
+    //console.log(totalItens)
+
+    
 }
-function converteNumText(value) {
-    var texto = (value <1?'0':'') + Math.floor(value*100)
-    texto = 'R$ ' + texto
-    return texto.substr(0, texto.length-2) + ',' + texto.substr(-2)
+    //document.getElementById('total').innerHTML = converteNumberText(totalProdutos)
+    escreveTotal(totalProdutos)
 }
-console.log(converteTextNum(priceText))
-console.log(converteNumText(converteTextNum(total.innerHTML)) )
+
+
+function converteTextNumber(text) {
+    var number = text.replace('R$ ', '').replace(',','.')
+    return parseFloat(number)
+}
+
+function converteNumberText(value){
+   var texto = (value < 1?'0':'') + Math.floor(value *100)
+   texto = 'R$ ' + texto
+   return texto.substr(0, texto.length -2) + ',' + texto.substr(-2)
+
+}
+
+function escreveTotal(value) {
+    total.innerHTML = converteNumberText(value)
+}
