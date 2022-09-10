@@ -14,6 +14,7 @@ h1{
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 table{
+    width: 100%;
     background-color: white;
     border-radius: 5px;
     padding: 20px;
@@ -24,7 +25,8 @@ table{
 width: 100px;
 }
 .quantity{
-    width: 25px;
+    width: 30px;
+  pointer-events: none;
    
 }
 table tr{
@@ -41,7 +43,7 @@ table tr{
     border: none;
     border-radius: 5px;
     margin-top: 10px;
-    width: 300px;
+    width: 300px;   
     display: flex;
     align-items: center;
     justify-content: center;
@@ -53,9 +55,31 @@ table tr{
    
 }
 body{
-    width: 400px;
+    width: 450px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+.btn-subtrair ion-icon, .btn-adicionar ion-icon{
+    pointer-events: none;
+}
+.btn-adicionar, .btn-subtrair{
+    background-color: green;
+    color: white;
+    
+    border: 2px solid green;
+}
+@media(max-width: 450px){
+    body{ width: 350px;}
+    .produto{
+        width: 100%;
+    }
+    .quantity{
+        width: 15px;
+    }
+    .btn-adicionar, .btn-subtrair{
+        border: none;
+    }
+   
 }

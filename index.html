@@ -13,7 +13,7 @@
 
     <table>
         <tr>
-            <th>Itens para comprar</th>
+            <th>Produto</th>
             <th>preço</th>
             <th>quantidade</th>
         </tr>
@@ -21,19 +21,19 @@
         <tr class="produto">
             <td><img class="foto-produto" src="./img/ype-neutro.jpg" alt="detergente ype 5l"></td>
             <td class="preco">R$ 2,90</td>
-            <td><input class="quantity" type="number" value="1"></td>
+            <td><button onclick="subInput(1)" id="btn1" class="btn-subtrair"><ion-icon name="remove-outline"></ion-icon></button><input class="quantity" type="number" value="1"><button onclick="addInput(1)" id="btn2" class="btn-adicionar"><ion-icon name="add-outline"></ion-icon></button></td>
         </tr>
         
         <tr class="produto">
             <td><img class="foto-produto" src="./img/sabao-po-omo-1,6kg.jpg" alt="sabao omo 1,6kg"></td>
             <td class="preco">R$ 8,56</td>
-            <td><input class="quantity" type="number" value="1"></td>
+            <td><button onclick="subInput(2)" class="btn-subtrair"><ion-icon name="remove-outline"></ion-icon></button><input class="quantity" type="number" value="1"><button onclick="addInput(2)" class="btn-adicionar"><ion-icon name="add-outline"></ion-icon></button></td>
         </tr>
 
         <tr class="produto">
             <td><img class="foto-produto" src="./img/agua-sanitaria-ype-5l.jpg" alt="agua sanitaria ype 5l"></td>
             <td class="preco">R$ 4,57</td>
-            <td><input class="quantity" type="number" value="1"></td>
+            <td><button onclick="subInput(3)" class="btn-subtrair"><ion-icon name="remove-outline"></ion-icon></button><input class="quantity" type="number" value="1"><button onclick="addInput(3)" class="btn-adicionar"><ion-icon name="add-outline"></ion-icon></button></td>
         </tr>
         
         <tr>
