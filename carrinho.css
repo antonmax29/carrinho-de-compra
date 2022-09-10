@@ -27,7 +27,7 @@ width: 100px;
 .quantity{
     width: 30px;
   pointer-events: none;
-   
+  
 }
 table tr{
     text-align: center;
@@ -80,6 +80,10 @@ body{
     }
     .btn-adicionar, .btn-subtrair{
         border: none;
+        padding: 2px 5px;
     }
    
+}
+.produto .campo_valor{
+    text-align: center;
 }
